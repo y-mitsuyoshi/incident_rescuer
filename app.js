@@ -1,4 +1,5 @@
 const { App } = require('@slack/bolt');
+require('dotenv').config();
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -15,7 +16,7 @@ app.message(async ({ event, say }) => {
     // 取得したメッセージ情報をコンソールに出力
     console.log(`チャンネル: ${channelId}, メッセージ: ${messageText}, ユーザー: ${userId}`);
 
-    await say(`レビューお願いたします。 first: <@${firstReviewer}>, second: <@${secondReviewer}>!`);
+    await say(`test`);
   } catch (error) {
     console.error(error);
   }

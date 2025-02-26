@@ -17,34 +17,33 @@ serverless deploy
 
 ## ローカルでの起動方法
 
-1. リポジトリをクローンします。
+### 1. リポジトリをクローンします。
     ```sh
     git clone https://github.com/yourusername/incident_rescuer.git
     cd incident_rescuer
     ```
 
-2. 必要な依存関係をインストールします。
+### 2. 必要な依存関係をインストールします。
     ```sh
     npm install
     ```
 
-3. 環境変数を設定します。`.env`ファイルをプロジェクトのルートディレクトリに作成し、以下の内容を追加します。
+### 3. 環境変数を設定します。`.env`ファイルをプロジェクトのルートディレクトリに作成し、以下の内容を追加します。
     ```
     SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxx-xxxxxxxxxxxx-xxxxxxxxxxxx
     SLACK_SIGNING_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     ```
    **注意:** `SLACK_BOT_TOKEN` と `SLACK_SIGNING_SECRET` は、Slackアプリの設定ページから取得してください。
 
-4. アプリケーションを起動します。
+### 4. アプリケーションを起動します。
     ```sh
     node app.js
     ```
 
-5. コンソールに `⚡️ Incident Rescuer is running!` と表示されれば、アプリケーションは正常に起動しています。
+### 5. コンソールに `⚡️ Incident Rescuer is running!` と表示されれば、アプリケーションは正常に起動しています。
 
-6. ngrokをインストールする
+### 6. ngrokをインストールする
 
-### ngrokのインストール
 
 ngrokを使用すると、ローカルで実行しているサーバーを外部に公開できます。
 
@@ -89,7 +88,7 @@ ngrok http 3000
 
 上記のコマンドは、ローカルの3000番ポートで実行されているサーバーをngrokで公開します。ngrokが発行するURLをSlackアプリのイベントURLに設定してください。
 
-7. Event Subscriptionsを有効にする
+### 7. Event Subscriptionsを有効にする
 
 SlackアプリのEvent Subscriptionsを有効にするには、以下の手順に従ってください。
 
@@ -102,4 +101,4 @@ SlackアプリのEvent Subscriptionsを有効にするには、以下の手順�
 
 ![Event Subscriptions](Event Subscriptions.png)
 
-8. Slackにアプリを追加する
+### 8. Slackにアプリを追加する

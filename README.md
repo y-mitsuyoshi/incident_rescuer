@@ -99,6 +99,6 @@ SlackアプリのEvent Subscriptionsを有効にするには、以下の手順�
 5.  「Subscribe to bot events」セクションで、アプリが必要とするイベントを選択します（例: `message.channels`）。
 6.  変更を保存します。
 
-![Event Subscriptions](Event Subscriptions.png)
+![Event Subscriptions](https://github.com/user-attachments/assets/ede90f4d-d16f-4cc5-a5a5-e6bcba0b4e67)
 
 ### 8. Slackにアプリを追加する

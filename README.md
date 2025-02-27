@@ -41,7 +41,7 @@
     *   今回は、`chat:write`を追加してください。これにより、アプリがメッセージを送信できるようになります。
     *   必要に応じて、他のスコープも追加できます (例: `channels:read`)。
 
-![OAuth   Permissions](https://github.com/user-attachments/assets/87476309-fd4f-4eec-8579-9c8a08b90f85)
+![Scopes](https://github.com/user-attachments/assets/bcf81cb3-d074-4d52-a757-9b53891c317d)
 
 
 ### 7. アプリをワークスペースにインストールします。
@@ -49,6 +49,10 @@
 *   ページ上部の「Install to Workspace」ボタンをクリックします。
 *   表示される指示に従ってアプリをインストールします。
 *   インストール後、「Bot User OAuth Token」が表示されるので、コピーして`.env`ファイルの`SLACK_BOT_TOKEN`に設定します。
+
+![OAuth   Permissions](https://github.com/user-attachments/assets/87476309-fd4f-4eec-8579-9c8a08b90f85)
+
+
 
 ## ローカルでの起動方法
 

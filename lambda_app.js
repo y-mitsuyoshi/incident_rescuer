@@ -1,4 +1,6 @@
 const { App, AwsLambdaReceiver } = require('@slack/bolt');
+const { handleMessage } = require('./src/app_functions');
+require('dotenv').config();
 
 const awsLambdaReceiver = new AwsLambdaReceiver({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -9,30 +11,23 @@ const app = new App({
   receiver: awsLambdaReceiver,
 });
 
-module.exports.handler = async (event, context, callback) => {
-  callback(null, {statusCode: 200, body: JSON.stringify({ok: 'ok'})});
+module.exports.handler = async (event, context) => {
   if (event.headers['X-Slack-Retry-Num']){
     console.log('リトライのため終了');
     console.log(event);
-    return;
+    return { statusCode: 200, body: 'OK' };
   }
 
-  const handler = await awsLambdaReceiver.start();
-  return handler(event, context, callback);
+  try {
+    const handler = await awsLambdaReceiver.start();
+    await handler(event, context);
+    return { statusCode: 200, body: 'OK' };
+  } catch (error) {
+    console.error('Error processing Slack event:', error);
+    return { statusCode: 500, body: 'Error' };
+  }
 }
 
 app.message(async ({ event, say }) => {
-    try {
-      // メッセージの情報を取得
-      const channelId = event.channel;
-      const messageText = event.text;
-      const userId = event.user;
-  
-      // 取得したメッセージ情報をコンソールに出力
-      console.log(`チャンネル: ${channelId}, メッセージ: ${messageText}, ユーザー: ${userId}`);
-  
-      await say(`test`);
-    } catch (error) {
-      console.error(error);
-    }
-  });
+  await handleMessage(event, say);
+});

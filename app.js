@@ -1,4 +1,5 @@
 const { App } = require('@slack/bolt');
+const { handleMessage } = require('./src/app_functions');
 require('dotenv').config();
 
 const app = new App({
@@ -7,19 +8,7 @@ const app = new App({
 });
 
 app.message(async ({ event, say }) => {
-  try {
-    // メッセージの情報を取得
-    const channelId = event.channel;
-    const messageText = event.text;
-    const userId = event.user;
-
-    // 取得したメッセージ情報をコンソールに出力
-    console.log(`チャンネル: ${channelId}, メッセージ: ${messageText}, ユーザー: ${userId}`);
-
-    await say(`test`);
-  } catch (error) {
-    console.error(error);
-  }
+  await handleMessage(event, say);
 });
 
 (async () => {

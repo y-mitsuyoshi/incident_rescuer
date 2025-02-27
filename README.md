@@ -22,6 +22,9 @@
 
 アプリ名 (例: Incident Rescuer) と、アプリをインストールするワークスペースを選択して、「Create App」をクリックします。
 
+![Nama App](https://github.com/user-attachments/assets/d3848ee1-cae4-4dc0-a9ee-1ab413600e59)
+
+
 ### 5. Signing Secretを設定します。
 
 *   「Basic Information」ページに移動します。
@@ -136,6 +139,9 @@ SlackアプリのEvent Subscriptionsを有効にするには、以下の手順�
 
 1. アプリを追加したいチャンネルに移動する
 2. インテグレーションのタブを開く
+
+   ![インテグレーション](https://github.com/user-attachments/assets/14fc2c3b-c055-46ca-a1bc-304155e36ba0)
+
 3. アプリを追加するを押下する
 4. 対象のアプリを追加する
 

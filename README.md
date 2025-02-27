@@ -1,4 +1,4 @@
-![Create New App](https://github.com/user-attachments/assets/199e1d6e-6d49-47dd-85da-84c4cf242c16)# Incident Rescuer
+# Incident Rescuer
 
 ## Slackアプリの作成
 

@@ -1,19 +1,39 @@
 # Incident Rescuer
 
-## slackアプリの作成
-https://api.slack.com/apps
+## Slackアプリの作成
 
-参考
-https://zenn.dev/yh007/articles/9ab89e24e690eb
+### 1. Slackアプリの管理ページにアクセスします。
 
-## AWS Lambda デプロイ方法
+[Slackアプリの管理ページ](https://api.slack.com/apps)
 
-```
-serverless deploy
-```
+### 2. 「Create New App」をクリックします。
 
-## slackアプリの作成
+### 3. アプリの作成方法を選択します。
 
+「From scratch」を選択します。
+
+### 4. アプリ名とワークスペースを入力し、「Create App」をクリックします。
+
+アプリ名 (例: Incident Rescuer) と、アプリをインストールするワークスペースを選択して、「Create App」をクリックします。
+
+### 5. Signing Secretを設定します。
+
+*   「Basic Information」ページに移動します。
+*   「Signing Secret」セクションまでスクロールし、表示されている値をコピーします。
+*   コピーした値を、`.env`ファイルの`SLACK_SIGNING_SECRET`に設定します。
+
+### 6. OAuth & Permissionsを設定します。
+
+*   左側のサイドバーから「OAuth & Permissions」を選択します。
+*   「Bot Token Scopes」セクションで、必要なスコープを追加します。
+    *   今回は、`chat:write`を追加してください。これにより、アプリがメッセージを送信できるようになります。
+    *   必要に応じて、他のスコープも追加できます (例: `channels:read`)。
+
+### 7. アプリをワークスペースにインストールします。
+
+*   ページ上部の「Install to Workspace」ボタンをクリックします。
+*   表示される指示に従ってアプリをインストールします。
+*   インストール後、「Bot User OAuth Token」が表示されるので、コピーして`.env`ファイルの`SLACK_BOT_TOKEN`に設定します。
 
 ## ローカルでの起動方法
 
@@ -43,7 +63,6 @@ serverless deploy
 ### 5. コンソールに `⚡️ Incident Rescuer is running!` と表示されれば、アプリケーションは正常に起動しています。
 
 ### 6. ngrokをインストールする
-
 
 ngrokを使用すると、ローカルで実行しているサーバーを外部に公開できます。
 
@@ -102,7 +121,14 @@ SlackアプリのEvent Subscriptionsを有効にするには、以下の手順�
 ![Event Subscriptions](https://github.com/user-attachments/assets/ede90f4d-d16f-4cc5-a5a5-e6bcba0b4e67)
 
 ### 8. Slackにアプリを追加する
+
 1. アプリを追加したいチャンネルに移動する
 2. インテグレーションのタブを開く
 3. アプリを追加するを押下する
 4. 対象のアプリを追加する
+
+## AWS Lambda デプロイ方法
+
+```
+serverless deploy
+```

@@ -7,11 +7,15 @@ const errorResponses = yaml.load(fs.readFileSync('./src/error_responses.yaml', '
 async function handleMessage(event, say) {
   try {
     const messageText = event.text;
+    const thread_ts = event.ts;
 
     // エラーメッセージに基づいて適切な対応を取得
     let response = errorResponses[messageText] || "不明なエラーです。ログを確認してください。";
 
-    await say(response);
+    await say({
+      text: response,
+      thread_ts: thread_ts
+    });
   } catch (error) {
     console.error(error);
   }

@@ -1,4 +1,4 @@
-# Incident Rescuer
+![Create New App](https://github.com/user-attachments/assets/199e1d6e-6d49-47dd-85da-84c4cf242c16)# Incident Rescuer
 
 ## Slackアプリの作成
 
@@ -8,9 +8,15 @@
 
 ### 2. 「Create New App」をクリックします。
 
+![Create New App](https://github.com/user-attachments/assets/f8eeaaa8-18f4-4496-bba9-b9c9b9f35627)
+
+
 ### 3. アプリの作成方法を選択します。
 
 「From scratch」を選択します。
+
+![Create an app](https://github.com/user-attachments/assets/9515e2b3-8cc9-43f6-84b9-703bf5198cd3)
+
 
 ### 4. アプリ名とワークスペースを入力し、「Create App」をクリックします。
 
@@ -22,12 +28,18 @@
 *   「Signing Secret」セクションまでスクロールし、表示されている値をコピーします。
 *   コピーした値を、`.env`ファイルの`SLACK_SIGNING_SECRET`に設定します。
 
+![SLACK_SIGNING_SECRET](https://github.com/user-attachments/assets/098a7fd2-e9e1-4295-81a3-ea287ca82b22)
+
+
 ### 6. OAuth & Permissionsを設定します。
 
 *   左側のサイドバーから「OAuth & Permissions」を選択します。
 *   「Bot Token Scopes」セクションで、必要なスコープを追加します。
     *   今回は、`chat:write`を追加してください。これにより、アプリがメッセージを送信できるようになります。
     *   必要に応じて、他のスコープも追加できます (例: `channels:read`)。
+
+![OAuth   Permissions](https://github.com/user-attachments/assets/87476309-fd4f-4eec-8579-9c8a08b90f85)
+
 
 ### 7. アプリをワークスペースにインストールします。
 

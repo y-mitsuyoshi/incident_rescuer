@@ -16,6 +16,15 @@ app.message(async ({ event, say }) => {
 });
 
 module.exports.handler = async (event, context) => {
+  // SlackのChallengeリクエストに対応
+  if (event.body) {
+    const body = JSON.parse(event.body);
+    if (body.challenge) {
+      console.log("Challenge received");
+      return { statusCode: 200, body: body.challenge };
+    }
+  }
+
   if (event.headers['X-Slack-Retry-Num']){
     console.log('リトライのため終了');
     console.log(event);

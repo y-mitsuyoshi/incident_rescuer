@@ -65,7 +65,7 @@ Incident Rescuerは、`src/error_responses.yaml`ファイルに障害内容と�
 *   「Signing Secret」セクションまでスクロールし、表示されている値をコピーします。
 *   コピーした値を、`.env`ファイルの`SLACK_SIGNING_SECRET`に設定します。
 
-![SLACK_SIGNING_SECRET](https://github.com/user-attachments/assets/2b62e401-873c-40d1-b2e3-c373130e8efc)
+![SLACK_SIGNING_SECRET](https://github.com/user-attachments/assets/098a7fd2-e9e1-4295-81a3-ea287ca82b22)
 
 
 ### 6. OAuth & Permissionsを設定します。
@@ -110,7 +110,7 @@ Incident Rescuerは、`src/error_responses.yaml`ファイルに障害内容と�
 
 ### 4. アプリケーションを起動します。
     ```sh
-    node app.js
+    node local_app.js
     ```
 
 ### 5. コンソールに `⚡️ Incident Rescuer is running!` と表示されれば、アプリケーションは正常に起動しています。

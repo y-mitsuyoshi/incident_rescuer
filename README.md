@@ -190,3 +190,18 @@ SlackアプリのEvent Subscriptionsを有効にするには、以下の手順�
 ```
 serverless deploy
 ```
+
+を入力すると下記が出力される。
+```
+Deploying "incident-rescuer" to stage "prod" (ap-northeast-1)
+
+✔ Service deployed to stack incident-rescuer-prod (39s)
+
+endpoint: POST - https://{id}.execute-api.ap-northeast-1.amazonaws.com/prod/slack/events
+functions:
+  slack: incident-rescuer-prod-slack (10 MB)
+```
+
+`https://{id}.execute-api.ap-northeast-1.amazonaws.com/prod/slack/events`
+を
+Event SubscriptionsのEvent SubscriptionsのRequest URLに入力もしくは置き換える。

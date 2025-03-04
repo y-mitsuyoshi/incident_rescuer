@@ -11,6 +11,10 @@ const app = new App({
   receiver: awsLambdaReceiver,
 });
 
+app.message(async ({ event, say }) => {
+  await handleMessage(event, say);
+});
+
 module.exports.handler = async (event, context) => {
   if (event.headers['X-Slack-Retry-Num']){
     console.log('リトライのため終了');
@@ -27,7 +31,3 @@ module.exports.handler = async (event, context) => {
     return { statusCode: 500, body: 'Error' };
   }
 }
-
-app.message(async ({ event, say }) => {
-  await handleMessage(event, say);
-});

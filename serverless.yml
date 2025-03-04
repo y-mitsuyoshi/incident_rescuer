@@ -17,3 +17,5 @@ functions:
           method: post
 plugins:
   - serverless-offline
+custom:
+  useDotenv: true 

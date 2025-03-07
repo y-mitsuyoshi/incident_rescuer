@@ -65,7 +65,7 @@ Incident Rescuerは、`src/error_responses.yaml`ファイルに障害内容と�
 *   「Signing Secret」セクションまでスクロールし、表示されている値をコピーします。
 *   コピーした値を、`.env`ファイルの`SLACK_SIGNING_SECRET`に設定します。
 
-![SLACK_SIGNING_SECRET](https://github.com/user-attachments/assets/098a7fd2-e9e1-4295-81a3-ea287ca82b22)
+![SLACK_SIGNING_SECRET](https://github.com/user-attachments/assets/73d36e8c-7582-4b5c-b871-5a3134126685)
 
 
 ### 6. OAuth & Permissionsを設定します。

@@ -8,6 +8,11 @@ const app = new App({
 });
 
 app.message(async ({ event, say }) => {
+  if (event.thread_ts) {
+    return;
+  }
+
+  
   await handleMessage(event, say);
 });
 
